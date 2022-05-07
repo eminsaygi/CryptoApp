@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   StyleSheet,
+  SafeAreaView,
   View,
   Text,
   ScrollView,
@@ -174,34 +175,28 @@ const Home = ({navigation}) => {
           borderRadius: SIZES.radius,
           backgroundColor: COLORS.secondary,
           ...styles.shadow,
-        }}
-      >
-        <Text style={{ color: COLORS.white, ...FONTS.h3 }}>
-          Investing Safety
-        </Text>
+        }}>
+        <Text style={{color: COLORS.white, ...FONTS.h3}}>Investing Safety</Text>
         <Text
           style={{
             marginTop: SIZES.base,
             color: COLORS.white,
             ...FONTS.body4,
             lineHeight: 18,
-          }}
-        >
+          }}>
           It’s very difficult to time an investment, especially when the market
           is voltile. Learn how to use dollar cost averagng to your adventage
         </Text>
 
         <TouchableOpacity
-          style={{ marginTop: SIZES.base }}
-          onPress={() => console.log("learn more")}
-        >
+          style={{marginTop: SIZES.base}}
+          onPress={() => console.log('learn more')}>
           <Text
             style={{
-              textDecorationLine: "underline",
+              textDecorationLine: 'underline',
               color: COLORS.green,
               ...FONTS.h3,
-            }}
-          >
+            }}>
             Learn More
           </Text>
         </TouchableOpacity>
@@ -212,15 +207,14 @@ const Home = ({navigation}) => {
   function renderTransactionsHistory() {
     return (
       <TransactionsHistory
-         customContainerStyle={{...styles.shadow}}
-         history={transactionHistory}
-
+        customContainerStyle={{...styles.shadow}}
+        history={transactionHistory}
       />
-    )
- }
+    );
+  }
   return (
     <ScrollView>
-      <View style={{ flex: 1, paddingBottom: 130 }}>
+      <View style={{flex: 1, paddingBottom: 130}}>
         {renderHeader()}
         {renderAlert()}
         {renderNotice()}
@@ -232,22 +226,21 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   shadow: {
-      shadowColor: "#000",
-      shadowOffset: {
-          width: 0,
-          height: 4,
-      },
-      shadowOpacity: 0.30,
-      shadowRadius: 4.65,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
 
-      elevation: 8,
-  }
-})
-
+    elevation: 8,
+  },
+});
 
 export default Home;

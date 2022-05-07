@@ -34,7 +34,7 @@ const Tabs = () => {
           bottom: 0,
           left: 0,
           right: 0,
-          backgroundColor: COLORS.WHITE,
+          backgroundColor: COLORS.white,
           borderTopColor: 'transparent',
           height: 100,
         },

@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 
 import {COLORS, SIZES, FONTS, icons} from '../constants';
 
@@ -42,34 +50,36 @@ const TransactionsHistory = ({customContainerStyle, history}) => {
     );
   };
   return (
-    <View
-      style={{
-        marginTop: SIZES.padding,
-        marginHorizontal: SIZES.padding,
-        padding: 20,
-        borderRadius: SIZES.radius,
-        backgroundColor: COLORS.white,
-        ...customContainerStyle,
-      }}>
-      <Text style={{...FONTS.h2}}>Transaction History</Text>
-      <FlatList
-        contentContainerStyle={{marginTop: SIZES.radius}}
-        scrollEnabled={false}
-        data={history}
-        keyExtractor={item => `${item.id}`}
-        renderItem={renderItem}
-        showsHorizontalScrollIndicator={false}
-        ItemSeparatorComponent={() => {
-          return (
-            <View
-              style={{
-                width: '100%',
-                height: 1,
-                backgroundColor: COLORS.lightGray,
-              }}></View>
-          );
-        }}></FlatList>
-    </View>
+      <View
+        style={{
+          marginTop: SIZES.padding,
+          marginHorizontal: SIZES.padding,
+          padding: 20,
+          borderRadius: SIZES.radius,
+          backgroundColor: COLORS.white,
+          ...customContainerStyle,
+        }}>
+        <Text style={{...FONTS.h2}}>Transaction History</Text>
+        
+        <FlatList
+          contentContainerStyle={{marginTop: SIZES.radius}}
+          scrollEnabled={false}
+          data={history}
+          keyExtractor={item => `${item.id}`}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+          ItemSeparatorComponent={() => {
+            return (
+              <View
+                style={{
+                  width: '100%',
+                  height: 1,
+                  backgroundColor: COLORS.lightGray,
+                }}></View>
+            );
+          }}></FlatList>
+      </View>
+   
   );
 };
 
