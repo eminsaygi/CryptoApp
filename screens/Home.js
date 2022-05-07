@@ -7,13 +7,22 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  LogBox,
 } from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 
 import {dummyData, COLORS, SIZES, FONTS, icons, images} from '../constants';
-import {PriceAlert} from '../components';
+import {PriceAlert, TransactionsHistory} from '../components';
 const Home = ({navigation}) => {
   const [trending, setTrending] = React.useState(dummyData.trendingCurrencies);
+  const [transactionHistory, setTransactionHistory] = React.useState(
+    dummyData.transactionHistory,
+  );
+
+  React.useEffect(() => {
+    LogBox.ignoreLogs(['VirtualizedList should never be nested']);
+  }, []);
+
   function renderHeader() {
     const renderItem = ({item, index}) => (
       <TouchableOpacity
@@ -192,12 +201,21 @@ const Home = ({navigation}) => {
       </View>
     );
   }
+
+  function renderTransactionsHistory() {
+    return (
+      <TransactionsHistory
+        customContainerStyle={{...styles.shadow}}
+        history={transactionHistory}></TransactionsHistory>
+    );
+  }
   return (
     <ScrollView>
       <View style={{flex: 1, paddingBottom: 130}}>
         {renderHeader()}
         {renderAlert()}
         {renderNotice()}
+        {renderTransactionsHistory()}
       </View>
     </ScrollView>
   );
