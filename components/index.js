@@ -1,4 +1,4 @@
-import PriceAlert from './PriceAlert'
+import PriceAlert from './PriceAlert';
+import TransactionsHistory from './TransactionsHistory';
 
-
-export {PriceAlert}
+export {PriceAlert, TransactionsHistory};
