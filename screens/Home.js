@@ -11,7 +11,7 @@ import {
 import {FlatList} from 'react-native-gesture-handler';
 
 import {dummyData, COLORS, SIZES, FONTS, icons, images} from '../constants';
-
+import {PriceAlert} from '../components'
 const Home = ({navigation}) => {
   const [trending, setTrending] = React.useState(dummyData.trendingCurrencies);
   function renderHeader() {
@@ -127,7 +127,7 @@ const Home = ({navigation}) => {
           <View
             style={{
               postion: 'absolute',
-              bottom: '-30%',
+              bottom: '-15%',
             }}>
             <Text
               style={{
@@ -151,9 +151,18 @@ const Home = ({navigation}) => {
     );
   }
 
+  function renderAlert(){
+       return (
+           <PriceAlert></PriceAlert>
+       )
+  }
+
   return (
     <ScrollView>
-      <View style={{flex: 1, paddingBottom: 130}}>{renderHeader()}</View>
+      <View style={{flex: 1, paddingBottom: 130}}>
+        {renderHeader()}
+        {renderAlert()}
+      </View>
     </ScrollView>
   );
 };
