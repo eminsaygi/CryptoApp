@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlasList, TouchableOpacity, Image} from 'react-native';
+import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
 
 import {COLORS, SIZES, FONTS, icons} from '../constants';
 
@@ -52,7 +52,7 @@ const TransactionsHistory = ({customContainerStyle, history}) => {
         ...customContainerStyle,
       }}>
       <Text style={{...FONTS.h2}}>Transaction History</Text>
-      <FlasList
+      <FlatList
         contentContainerStyle={{marginTop: SIZES.radius}}
         scrollEnabled={false}
         data={history}
@@ -68,7 +68,7 @@ const TransactionsHistory = ({customContainerStyle, history}) => {
                 backgroundColor: COLORS.lightGray,
               }}></View>
           );
-        }}></FlasList>
+        }}></FlatList>
     </View>
   );
 };
