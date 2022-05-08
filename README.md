@@ -30,7 +30,7 @@ Splash Screen | Home
 
 Crypto Detail  | Transaction
 :-------------------------: | :-------------------------:
-![Preview](/Images/3.png) | ![Preview](/Images/3.png)
+![Preview](/Images/3.png) | ![Preview](/Images/4.png)
 
 
 # Building
