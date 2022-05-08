@@ -44,42 +44,41 @@ const TransactionsHistory = ({customContainerStyle, history}) => {
           </Text>
           <Image
             source={icons.right_arrow}
-            style={{width: 20, height: 20, color: COLORS.darkGray}}></Image>
+            style={{tintColor: COLORS.darkGray, width: 20, height: 20}}></Image>
         </View>
       </TouchableOpacity>
     );
   };
   return (
-      <View
-        style={{
-          marginTop: SIZES.padding,
-          marginHorizontal: SIZES.padding,
-          padding: 20,
-          borderRadius: SIZES.radius,
-          backgroundColor: COLORS.white,
-          ...customContainerStyle,
-        }}>
-        <Text style={{...FONTS.h2}}>Transaction History</Text>
-        
-        <FlatList
-          contentContainerStyle={{marginTop: SIZES.radius}}
-          scrollEnabled={false}
-          data={history}
-          keyExtractor={item => `${item.id}`}
-          renderItem={renderItem}
-          showsVerticalScrollIndicator={false}
-          ItemSeparatorComponent={() => {
-            return (
-              <View
-                style={{
-                  width: '100%',
-                  height: 1,
-                  backgroundColor: COLORS.lightGray,
-                }}></View>
-            );
-          }}></FlatList>
-      </View>
-   
+    <View
+      style={{
+        marginTop: SIZES.padding,
+        marginHorizontal: SIZES.padding,
+        padding: 20,
+        borderRadius: SIZES.radius,
+        backgroundColor: COLORS.white,
+        ...customContainerStyle,
+      }}>
+      <Text style={{...FONTS.h2}}>Transaction History</Text>
+
+      <FlatList
+        contentContainerStyle={{marginTop: SIZES.radius}}
+        scrollEnabled={false}
+        data={history}
+        keyExtractor={item => `${item.id}`}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        ItemSeparatorComponent={() => {
+          return (
+            <View
+              style={{
+                width: '100%',
+                height: 1,
+                backgroundColor: COLORS.lightGray,
+              }}></View>
+          );
+        }}></FlatList>
+    </View>
   );
 };
 
