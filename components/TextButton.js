@@ -20,8 +20,10 @@ const TextButton = ({
         ...customContainerStyle,
       }}
       onPress={onPress}>
-          <Text style={{color:COLORS.white,...FONTS.h3}}></Text>
-      </TouchableOpacity>
+      <Text style={{color: COLORS.white, ...FONTS.h3, ...customLabelStyle}}>
+        {label}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
